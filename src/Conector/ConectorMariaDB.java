@@ -15,7 +15,7 @@ public class ConectorMariaDB {
     public void consulta(String statement) {
             Connection con;
         try {
-            con = DriverManager.getConnection("jdbc:mariadb://1.1.1.1:PORT/DB","USER","PASSWORD");
+            con = DriverManager.getConnection("jdbc:mariadb://192.168.0.111:3306/Java","abialanez","luisa97");
             Statement stat = con.createStatement();
             ResultSet rs = stat.executeQuery(statement);
             if (rs.next()) {
