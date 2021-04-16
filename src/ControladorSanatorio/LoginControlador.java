@@ -24,7 +24,7 @@ import javafx.stage.Stage;
  *
  * @author Ulises
  */
-public class LoginController implements Initializable {
+public class LoginControlador implements Initializable {
 
     @FXML
     private Button btnLogin;

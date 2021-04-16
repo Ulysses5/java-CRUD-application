@@ -8,14 +8,13 @@
 <?import javafx.scene.text.Font?>
 
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/16" fx:controller="ControladorSanatorio.MenuController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/16" fx:controller="ControladorSanatorio.MenuControlador">
    <children>
       <ImageView fitHeight="122.0" fitWidth="600.0" opacity="0.64" pickOnBounds="true">
          <image>
             <Image url="@../assets/banner.jpg" />
          </image>
       </ImageView>
-      <Button layoutX="14.0" layoutY="145.0" mnemonicParsing="false" text="Consulta de paciente" />
       <Label layoutX="364.0" layoutY="14.0" opacity="0.77" prefHeight="17.0" prefWidth="137.0" style="-fx-background-color: #90a4ae;" text="Bienvenido, *Usuario*" textAlignment="CENTER">
          <font>
             <Font name="System Bold" size="12.0" />
@@ -26,5 +25,15 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
+      <ImageView fx:id="btnBusqueda" fitHeight="150.0" fitWidth="200.0" layoutX="32.0" layoutY="200.0" onMouseClicked="#btnBuscarPaciente" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/icon.png" />
+         </image>
+      </ImageView>
+      <Label alignment="CENTER" contentDisplay="BOTTOM" layoutX="43.0" layoutY="237.0" prefHeight="38.0" prefWidth="128.0" text="Busqueda de paciente" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

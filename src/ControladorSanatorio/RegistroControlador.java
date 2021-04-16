@@ -22,7 +22,7 @@ import javafx.stage.Stage;
  *
  * @author Ulises
  */
-public class RegistroController implements Initializable {
+public class RegistroControlador implements Initializable {
 
     @FXML
     private TextField campoRegUser;
