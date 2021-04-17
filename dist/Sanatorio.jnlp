@@ -8,7 +8,7 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="Sanatorio.jar" size="112849" download="eager" />
+    <jar href="Sanatorio.jar" size="114923" download="eager" />
     <jar href="lib\mariadb-java-client-2.7.2.jar" size="632979" download="eager" />
   </resources>
   <jfx:javafx-desc  width="800" height="600" main-class="ControladorSanatorio.Main"  name="Sanatorio" />

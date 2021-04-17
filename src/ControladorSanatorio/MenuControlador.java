@@ -6,9 +6,7 @@
 package ControladorSanatorio;
 
 import java.io.IOException;
-import Conector.ConectorMariaDB;
 import java.net.URL;
-import java.sql.SQLException;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -50,8 +48,6 @@ public class MenuControlador implements Initializable {
 
     @FXML
     private void btnBuscarPaciente(MouseEvent event) throws IOException{
-        ConectorMariaDB db = new ConectorMariaDB();
-        db.consulta("SELECT * FROM Personas");
         Parent root = FXMLLoader.load(getClass().getResource("/VistaSanatorio/BusquedaVista.fxml"));
         Stage window = (Stage) btnLogout.getScene().getWindow();
         window.setScene(new Scene(root));
