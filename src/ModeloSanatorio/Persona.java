@@ -20,7 +20,7 @@ public class Persona {
     
     public Persona(String dni) throws SQLException{
         this.dni = dni;
-        ConectorMariaDB con = new ConectorMariaDB("uromero", "Cyberark1", "Java", "192.168.0.111", "3306");
+        ConectorMariaDB con = new ConectorMariaDB("USER", "PASSWORD", "DB", "192.168.0.111", "3306");
         con.ejecutarConsulta("SELECT * FROM `persons-tbl` WHERE DNI=40950699;");
         ResultSet rs = con.getResultSet();
         while(rs.next()){
