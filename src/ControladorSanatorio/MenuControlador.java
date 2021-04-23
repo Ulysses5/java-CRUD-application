@@ -15,6 +15,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
@@ -29,7 +30,13 @@ public class MenuControlador implements Initializable {
     @FXML
     private Button btnLogout;
     @FXML
-    private ImageView btnBusqueda;
+    private Button btnBusqueda;
+    @FXML
+    private Label usuarioText;
+    @FXML
+    private Button btnElminar;
+    @FXML
+    private Button btnAñadir;
 
     /**
      * Initializes the controller class.
@@ -47,10 +54,18 @@ public class MenuControlador implements Initializable {
     }
 
     @FXML
-    private void btnBuscarPaciente(MouseEvent event) throws IOException{
+    private void btnBuscarPaciente(ActionEvent event) throws IOException{
         Parent root = FXMLLoader.load(getClass().getResource("/VistaSanatorio/BusquedaVista.fxml"));
         Stage window = (Stage) btnLogout.getScene().getWindow();
         window.setScene(new Scene(root));
+    }
+
+    @FXML
+    private void btnEliminarPaciente(ActionEvent event) {
+    }
+
+    @FXML
+    private void btnAñadirPaciente(ActionEvent event) {
     }
     
 }

@@ -20,15 +20,18 @@ public class Persona {
     
     public Persona(String dni) throws SQLException{
         this.dni = dni;
-        ConectorMariaDB con = new ConectorMariaDB("uromero", "Cyberark1", "Java", "192.168.0.111", "3306");
-        con.ejecutarConsulta("SELECT * FROM `persons-tbl` WHERE DNI=40950699;");
+        String username = "USER";
+        String password = "PASS";
+        String database = "DB";
+        ConectorMariaDB con = new ConectorMariaDB(username, password, database, "192.168.0.111", "3306");
+        con.ejecutarConsulta("SELECT * FROM `persons-tbl` WHERE DNI="+dni+";");
         ResultSet rs = con.getResultSet();
         while(rs.next()){
             setNombre(rs.getString("Nombre"));
             setApellido(rs.getString("Apellido"));
             setTelefono(rs.getString("Telefono"));
             setDireccion(rs.getString("Direccion"));
-            setObraSoc(rs.getString("Obra Social"));
+            setSexo(rs.getString("ID Sexo"));
             setIdObraSoc(rs.getString("ID Obra Social"));
         }
         con.cerrarConexion();
@@ -80,7 +83,7 @@ public class Persona {
         return obraSoc;
     }
 
-    public void setObraSoc(String obraSoc) {
+    public void setSexo(String obraSoc) {
         this.obraSoc = obraSoc;
     }
 

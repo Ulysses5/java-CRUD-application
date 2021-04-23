@@ -7,15 +7,29 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/16" fx:controller="ControladorSanatorio.MenuControlador">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControladorSanatorio.MenuControlador">
    <children>
-      <ImageView fitHeight="122.0" fitWidth="600.0" opacity="0.64" pickOnBounds="true">
+      <Button fx:id="btnElminar" ellipsisString="" layoutX="433.0" layoutY="125.0" lineSpacing="145.0" mnemonicParsing="false" onAction="#btnEliminarPaciente" prefHeight="224.0" prefWidth="137.0" text="Eliminar paciente" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnBusqueda" ellipsisString="" layoutX="238.0" layoutY="126.0" lineSpacing="145.0" mnemonicParsing="false" onAction="#btnBuscarPaciente" prefHeight="224.0" prefWidth="137.0" text="Buscar paciente" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnAñadir" ellipsisString="" layoutX="41.0" layoutY="125.0" lineSpacing="145.0" mnemonicParsing="false" onAction="#btnAñadirPaciente" prefHeight="224.0" prefWidth="137.0" text="Añadir paciente" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="212.0" fitWidth="628.0" layoutX="-15.0" layoutY="-56.0" opacity="0.81" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../assets/banner.jpg" />
+            <Image url="@../assets/ban.png" />
          </image>
       </ImageView>
-      <Label layoutX="364.0" layoutY="14.0" opacity="0.77" prefHeight="17.0" prefWidth="137.0" style="-fx-background-color: #90a4ae;" text="Bienvenido, *Usuario*" textAlignment="CENTER">
+      <Label layoutX="364.0" layoutY="14.0" opacity="0.77" prefHeight="17.0" prefWidth="137.0" style="-fx-background-color: #90a4ae;" text="Bienvenido, " textAlignment="CENTER">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
@@ -25,12 +39,22 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
-      <ImageView fx:id="btnBusqueda" fitHeight="150.0" fitWidth="200.0" layoutX="32.0" layoutY="200.0" onMouseClicked="#btnBuscarPaciente" pickOnBounds="true" preserveRatio="true">
+      <ImageView disable="true" fitHeight="122.0" fitWidth="128.0" layoutX="245.0" layoutY="182.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../assets/icon.png" />
          </image>
       </ImageView>
-      <Label alignment="CENTER" contentDisplay="BOTTOM" layoutX="43.0" layoutY="237.0" prefHeight="38.0" prefWidth="128.0" text="Busqueda de paciente" textAlignment="CENTER" wrapText="true">
+      <ImageView disable="true" fitHeight="150.0" fitWidth="200.0" layoutX="34.0" layoutY="166.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/pacient.png" />
+         </image>
+      </ImageView>
+      <ImageView disable="true" fitHeight="150.0" fitWidth="143.0" layoutX="427.0" layoutY="166.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/pacientealta.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="usuarioText" layoutX="437.0" layoutY="14.0" prefHeight="17.0" prefWidth="65.0" textAlignment="CENTER">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>

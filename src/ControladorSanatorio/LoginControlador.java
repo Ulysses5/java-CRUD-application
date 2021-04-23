@@ -14,13 +14,10 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-/**
- * FXML Controller class
- *
- * @author Ulises
- */
-public class LoginControlador implements Initializable {
 
+public class LoginControlador implements Initializable {
+    public String USER;
+    public String PASS;
     @FXML
     private Button btnLogin;
     @FXML
@@ -41,13 +38,23 @@ public class LoginControlador implements Initializable {
     }    
 
     @FXML
-    private void loginClicked(ActionEvent event) throws IOException {
+    public void loginClicked(ActionEvent event) throws IOException {
+        USER = this.campoUser.getText();
+        PASS = this.campoPass.getText();
         Parent root = FXMLLoader.load(getClass().getResource("/VistaSanatorio/MenuVista.fxml"));
         Stage window = (Stage) btnLogin.getScene().getWindow();
         window.setScene(new Scene(root));
     }
 
+    public String getUSER() {
+        return this.USER;
+    }
 
+    public String getPASS() {
+        return this.PASS;
+    }
+    
+    
 
 
     @FXML
