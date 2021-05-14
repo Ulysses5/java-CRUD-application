@@ -90,6 +90,7 @@ public class BusquedaControlador implements Initializable {
             
             
             
+            
         }
 
     @FXML
@@ -109,6 +110,13 @@ public class BusquedaControlador implements Initializable {
         catch(IOException ex){
             System.out.println(ex);
         }
+    }
+
+    @FXML
+    private void backClicked(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/VistaSanatorio/MenuVista.fxml"));
+        Stage window = (Stage) btnVolver.getScene().getWindow();
+        window.setScene(new Scene(root));
     }
 }
 

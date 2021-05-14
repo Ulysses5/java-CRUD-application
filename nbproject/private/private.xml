@@ -5,12 +5,10 @@
         <group>
             <file>file:/D:/Java/Projectos/Sanatorio/src/ControladorSanatorio/LoginControlador.java</file>
             <file>file:/D:/Java/Projectos/Sanatorio/src/ControladorSanatorio/BusquedaControlador.java</file>
-            <file>file:/D:/Java/Projectos/Sanatorio/src/Conector/ConectorMariaDB.java</file>
             <file>file:/D:/Java/Projectos/Sanatorio/src/ControladorSanatorio/Main.java</file>
             <file>file:/D:/Java/Projectos/Sanatorio/src/ModeloSanatorio/ModeloPersona.java</file>
             <file>file:/D:/Java/Projectos/Sanatorio/src/ControladorSanatorio/MenuControlador.java</file>
             <file>file:/D:/Java/Projectos/Sanatorio/src/ControladorSanatorio/RegistroControlador.java</file>
-            <file>file:/D:/Java/Projectos/Sanatorio/src/VistaSanatorio/EdicionVista.fxml</file>
             <file>file:/D:/Java/Projectos/Sanatorio/src/ControladorSanatorio/EdicionController.java</file>
         </group>
     </open-files>

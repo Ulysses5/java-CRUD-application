@@ -26,7 +26,7 @@
             <TableColumn fx:id="colTelefono" prefWidth="105.0" text="Telefono" />
         </columns>
       </TableView>
-      <Button fx:id="btnVolver" layoutX="951.0" layoutY="10.0" mnemonicParsing="false" text="Volver" />
+      <Button fx:id="btnVolver" layoutX="951.0" layoutY="10.0" mnemonicParsing="false" onAction="#backClicked" text="Volver" />
       <Button fx:id="btnEdit" layoutX="846.0" layoutY="27.0" mnemonicParsing="false" onAction="#editClicked" prefHeight="43.0" prefWidth="52.0">
          <graphic>
             <ImageView fitHeight="29.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">

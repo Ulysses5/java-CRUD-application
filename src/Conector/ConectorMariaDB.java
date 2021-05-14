@@ -19,7 +19,7 @@ public class ConectorMariaDB {
     protected ResultSet resultSet;
     
     public ConectorMariaDB() {
-        String USER = "";
+        String USER = "root";
         String PASSWORD = "";
         String DB = "Java";
         try {

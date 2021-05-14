@@ -1,7 +1,6 @@
 
 package ControladorSanatorio;
 
-import ModeloSanatorio.ModeloPersona;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -10,6 +9,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 public class EdicionController implements Initializable {
 
@@ -39,12 +39,13 @@ public class EdicionController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         cboxSexo.getItems().addAll("Femenino","Masculino");
         cboxOS.getItems().addAll("OSDE","Swiss Medical");
-        //this.txtDNI =; 
+        
     }    
 
     @FXML
     private void clickCancelar(ActionEvent event) {
-        
+        Stage stage = (Stage) btnCancelar.getScene().getWindow();
+        stage.close();
     }
 
     @FXML
