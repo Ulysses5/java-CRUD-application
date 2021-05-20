@@ -57,7 +57,6 @@ public class BusquedaControlador implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-
         this.colNombre.setCellValueFactory(new PropertyValueFactory("nombre"));
         this.colApellido.setCellValueFactory(new PropertyValueFactory("apellido"));
         this.colDNI.setCellValueFactory(new PropertyValueFactory("dni"));
@@ -116,6 +115,7 @@ public class BusquedaControlador implements Initializable {
     private void backClicked(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/VistaSanatorio/MenuVista.fxml"));
         Stage window = (Stage) btnVolver.getScene().getWindow();
+        window.centerOnScreen();
         window.setScene(new Scene(root));
     }
 }

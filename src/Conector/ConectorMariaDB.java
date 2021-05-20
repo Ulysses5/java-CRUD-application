@@ -23,7 +23,7 @@ public class ConectorMariaDB {
         String PASSWORD = "";
         String DB = "Java";
         try {
-            conexion = DriverManager.getConnection("jdbc:mariadb://192.168.0.105:3306/"+DB,USER,PASSWORD);
+            conexion = DriverManager.getConnection("jdbc:mariadb://192.168.0.108:3306/"+DB,USER,PASSWORD);
             conexion.setAutoCommit(true);
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());

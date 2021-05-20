@@ -34,8 +34,6 @@ public class MenuControlador implements Initializable {
     @FXML
     private Label usuarioText;
     @FXML
-    private Button btnElminar;
-    @FXML
     private Button btnAñadir;
 
     /**
@@ -50,6 +48,7 @@ public class MenuControlador implements Initializable {
     private void logout(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/VistaSanatorio/LoginVista.fxml"));
         Stage window = (Stage) btnLogout.getScene().getWindow();
+        window.centerOnScreen();
         window.setScene(new Scene(root));
     }
 
@@ -57,15 +56,18 @@ public class MenuControlador implements Initializable {
     private void btnBuscarPaciente(ActionEvent event) throws IOException{
         Parent root = FXMLLoader.load(getClass().getResource("/VistaSanatorio/BusquedaVista.fxml"));
         Stage window = (Stage) btnLogout.getScene().getWindow();
+        window.centerOnScreen();
+        window.setX(window.getX()-100);
         window.setScene(new Scene(root));
     }
 
-    @FXML
-    private void btnEliminarPaciente(ActionEvent event) {
-    }
 
     @FXML
-    private void btnAñadirPaciente(ActionEvent event) {
+    private void btnAñadirPaciente(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/VistaSanatorio/AnadirVista.fxml"));
+        Stage window = (Stage) btnLogout.getScene().getWindow();
+        window.centerOnScreen();
+        window.setScene(new Scene(root));
     }
     
 }

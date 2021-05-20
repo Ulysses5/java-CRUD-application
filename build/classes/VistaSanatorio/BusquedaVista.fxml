@@ -14,7 +14,7 @@
       <Label layoutX="24.0" layoutY="14.0" text="Busqueda de Cliente" />
       <TextField fx:id="campoDNI" alignment="CENTER" layoutX="440.0" layoutY="36.0" prefHeight="25.0" prefWidth="320.0" promptText="Buscar" />
       <Button fx:id="btnOk" layoutX="780.0" layoutY="27.0" mnemonicParsing="false" onAction="#searchClicked" prefHeight="43.0" prefWidth="52.0" style="-fx-background-color: Green;" text="✓" />
-      <TableView fx:id="tablaPacientes" layoutX="176.0" layoutY="76.0" prefHeight="320.0" prefWidth="847.0">
+      <TableView fx:id="tablaPacientes" layoutX="92.0" layoutY="78.0" prefHeight="318.0" prefWidth="841.0">
         <columns>
           <TableColumn fx:id="colNombre" prefWidth="105.0" text="Nombre" />
           <TableColumn fx:id="colApellido" prefWidth="105.0" text="Apellido" />

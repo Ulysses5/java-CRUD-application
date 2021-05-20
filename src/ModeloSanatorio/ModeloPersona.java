@@ -35,6 +35,7 @@ public class ModeloPersona {
     public ModeloPersona(String busqueda) {
         this.busqueda = busqueda;
     }
+    // ACA
     public ObservableList<ModeloPersona> getPersonas(){
         ArrayList<String> valores = new ArrayList<String>();
         ObservableList<ModeloPersona> obs = FXCollections.observableArrayList();

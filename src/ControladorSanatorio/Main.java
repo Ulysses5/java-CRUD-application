@@ -23,6 +23,7 @@ public class Main extends Application {
             primaryStage.setResizable(false);
             primaryStage.getIcons().add(new Image("/assets/icon.png"));
             primaryStage.setTitle("Sanatorio Medico");
+            primaryStage.centerOnScreen();
             primaryStage.show();            
             
             
