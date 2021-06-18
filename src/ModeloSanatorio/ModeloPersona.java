@@ -5,7 +5,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import javafx.collections.FXCollections;
-import javafx.collections.ObservableArray;
 import javafx.collections.ObservableList;
 
 public class ModeloPersona {
@@ -35,7 +34,6 @@ public class ModeloPersona {
     public ModeloPersona(String busqueda) {
         this.busqueda = busqueda;
     }
-    // ACA
     public ObservableList<ModeloPersona> getPersonas(){
         ArrayList<String> valores = new ArrayList<String>();
         ObservableList<ModeloPersona> obs = FXCollections.observableArrayList();

@@ -8,26 +8,33 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="410.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControladorSanatorio.BusquedaControlador">
+<AnchorPane id="AnchorPane" prefHeight="452.0" prefWidth="864.0" style="-fx-background-color: #bbdefb;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControladorSanatorio.BusquedaControlador">
    <children>
-      <Label layoutX="24.0" layoutY="14.0" text="Busqueda de Cliente" />
-      <TextField fx:id="campoDNI" alignment="CENTER" layoutX="440.0" layoutY="36.0" prefHeight="25.0" prefWidth="320.0" promptText="Buscar" />
-      <Button fx:id="btnOk" layoutX="780.0" layoutY="27.0" mnemonicParsing="false" onAction="#searchClicked" prefHeight="43.0" prefWidth="52.0" style="-fx-background-color: Green;" text="✓" />
-      <TableView fx:id="tablaPacientes" layoutX="92.0" layoutY="78.0" prefHeight="318.0" prefWidth="841.0">
+      <Label layoutX="23.0" layoutY="14.0" prefHeight="51.0" prefWidth="181.0" style="-fx-background-color: #a2c3db; -fx-border-color: #8fabc1;" text="Busqueda de paciente" textAlignment="CENTER" textFill="#757474" wrapText="true">
+         <font>
+            <Font name="SansSerif Bold" size="20.0" />
+         </font></Label>
+      <TextField fx:id="campoDNI" alignment="CENTER" layoutX="233.0" layoutY="36.0" prefHeight="25.0" prefWidth="320.0" promptText="Buscar (para buscar todo deje el campo vacio)" />
+      <Button fx:id="btnOk" layoutX="586.0" layoutY="27.0" mnemonicParsing="false" onAction="#searchClicked" prefHeight="43.0" prefWidth="52.0" style="-fx-background-color: Green;" text="✓" />
+      <TableView fx:id="tablaPacientes" layoutX="6.0" layoutY="75.0" prefHeight="369.0" prefWidth="852.0">
         <columns>
-          <TableColumn fx:id="colNombre" prefWidth="105.0" text="Nombre" />
-          <TableColumn fx:id="colApellido" prefWidth="105.0" text="Apellido" />
-            <TableColumn fx:id="colDNI" prefWidth="73.0" text="DNI" />
-            <TableColumn fx:id="colSexo" prefWidth="74.0" text="Sexo" />
-            <TableColumn fx:id="colDireccion" prefWidth="152.0" text="Direccion" />
-            <TableColumn fx:id="colOS" prefWidth="113.0" text="Obra Social" />
-            <TableColumn fx:id="colIDOS" prefWidth="113.0" text="ID Obra Social" />
-            <TableColumn fx:id="colTelefono" prefWidth="105.0" text="Telefono" />
+          <TableColumn fx:id="colNombre" prefWidth="105.0" style="-fx-background-color: #cfd8dc;" text="Nombre" />
+          <TableColumn fx:id="colApellido" prefWidth="105.0" style="-fx-background-color: #9ea7aa;" text="Apellido" />
+            <TableColumn fx:id="colDNI" prefWidth="73.0" style="-fx-background-color: #cfd8dc;" text="DNI" />
+            <TableColumn fx:id="colSexo" prefWidth="74.0" style="-fx-background-color: #9ea7aa;" text="Sexo" />
+            <TableColumn fx:id="colDireccion" prefWidth="152.0" style="-fx-background-color: #cfd8dc;" text="Direccion" />
+            <TableColumn fx:id="colOS" prefWidth="113.0" style="-fx-background-color: #9ea7aa;" text="Obra Social" />
+            <TableColumn fx:id="colIDOS" prefWidth="113.0" style="-fx-background-color: #cfd8dc;" text="ID Obra Social" />
+            <TableColumn fx:id="colTelefono" prefWidth="115.66668701171875" style="-fx-background-color: #9ea7aa;" text="Telefono" />
         </columns>
       </TableView>
-      <Button fx:id="btnVolver" layoutX="951.0" layoutY="10.0" mnemonicParsing="false" onAction="#backClicked" text="Volver" />
-      <Button fx:id="btnEdit" layoutX="846.0" layoutY="27.0" mnemonicParsing="false" onAction="#editClicked" prefHeight="43.0" prefWidth="52.0">
+      <Button fx:id="btnVolver" layoutX="749.0" layoutY="33.0" mnemonicParsing="false" onAction="#backClicked" prefHeight="32.0" prefWidth="71.0" style="-fx-background-radius: 30;" text="Volver">
+         <font>
+            <Font name="SansSerif Regular" size="12.0" />
+         </font></Button>
+      <Button fx:id="btnEdit" layoutX="655.0" layoutY="25.0" mnemonicParsing="false" onAction="#editClicked" prefHeight="43.0" prefWidth="52.0">
          <graphic>
             <ImageView fitHeight="29.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
                <image>

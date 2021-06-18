@@ -1,11 +1,9 @@
 package ControladorSanatorio;
 
-import Conector.ConectorMariaDB;
+import ModeloSanatorio.ModeloUsuario;
 import java.net.URL;
 import java.io.IOException;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -22,8 +20,6 @@ import javafx.stage.Stage;
 
 
 public class LoginControlador implements Initializable {
-    public String USER;
-    public String PASS;
     @FXML
     private Button btnLogin;
     @FXML
@@ -35,9 +31,6 @@ public class LoginControlador implements Initializable {
     @FXML
     private Button btnRegister;
 
-    /**
-     * Initializes the controller class.
-     */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
 
@@ -45,26 +38,21 @@ public class LoginControlador implements Initializable {
 
     @FXML
     public void loginClicked(ActionEvent event) throws IOException, SQLException {
-        ConectorMariaDB con = new ConectorMariaDB();
-        ArrayList<String> valores = new ArrayList<String>();
-        valores.add(campoUser.getText());
-        valores.add(campoPass.getText());
-        con.ejecutarConsultaPreparada("SELECT * FROM `loginInfo` WHERE `username` = ? AND `password` = SHA2(?,256)", valores);
-        ResultSet rs = con.getResultSet();
-        
-        if (rs.next()){
+        ModeloUsuario user = new ModeloUsuario(campoUser.getText(), campoPass.getText());
+        int loginCode = user.loginUser();
+        if (0 == loginCode){
             Parent root = FXMLLoader.load(getClass().getResource("/VistaSanatorio/MenuVista.fxml"));
             Stage window = (Stage) btnLogin.getScene().getWindow();
             window.setScene(new Scene(root));
         }
         else{
-            Alert login = new Alert(Alert.AlertType.ERROR);
-            login.setTitle("Credenciales incorrectas");
-            Stage stage = (Stage) login.getDialogPane().getScene().getWindow();
+            Alert loginFailed = new Alert(Alert.AlertType.ERROR);
+            loginFailed.setTitle("Credenciales incorrectas");
+            Stage stage = (Stage) loginFailed.getDialogPane().getScene().getWindow();
             stage.getIcons().add(new Image(this.getClass().getResource("/assets/user.png").toString()));
-            login.setHeaderText(null);
-            login.setContentText("El usuario o contraseña son incorrectos.");
-            login.showAndWait();
+            loginFailed.setHeaderText(null);
+            loginFailed.setContentText("El usuario o contraseña son incorrectos.");
+            loginFailed.showAndWait();
         }
         
     }

@@ -9,32 +9,32 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControladorSanatorio.RegistroControlador">
+<AnchorPane id="AnchorPane" prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControladorSanatorio.RegistroControlador">
    <children>
-      <AnchorPane layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #cfd8dc;">
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" style="-fx-background-color: #cfd8dc;">
          <children>
-            <ImageView fitHeight="400.0" fitWidth="310.0" pickOnBounds="true">
+            <ImageView fitHeight="480.0" fitWidth="640.0" pickOnBounds="true">
                <image>
-                  <Image url="@../assets/a.png" />
+                  <Image url="@../assets/back.jpg" />
                </image>
             </ImageView>
-            <TextField fx:id="campoRegUser" layoutX="347.0" layoutY="75.0" prefHeight="25.0" prefWidth="212.0" promptText="Nombre de usuario" />
-            <TextField fx:id="campoRegMail" layoutX="347.0" layoutY="107.0" prefHeight="25.0" prefWidth="212.0" promptText="Correo Electronico" />
-            <PasswordField fx:id="campoRegPass" layoutX="347.0" layoutY="148.0" prefHeight="25.0" prefWidth="212.0" promptText="Contraseña" />
-            <PasswordField fx:id="campoRegPass2" layoutX="347.0" layoutY="173.0" prefHeight="25.0" prefWidth="212.0" promptText="Confirmar contraseña" />
-            <Button fx:id="btnRegisterUser" layoutX="396.0" layoutY="229.0" mnemonicParsing="false" onAction="#registerUserClicked" prefHeight="44.0" prefWidth="114.0" style="-fx-font-family: Helvetica; -fx-background-color: #1565c0;" text="Registrarse" textAlignment="CENTER" textFill="WHITE">
+            <TextField fx:id="campoRegUser" layoutX="28.0" layoutY="86.0" prefHeight="25.0" prefWidth="212.0" promptText="Nombre de usuario" style="-fx-background-color: #a9a9a9 , white , white; -fx-background-insets: 0 -1 -1 -1, 0 0 0 0, 0 -1 3 -1;" />
+            <TextField fx:id="campoRegMail" layoutX="28.0" layoutY="118.0" prefHeight="25.0" prefWidth="212.0" promptText="Correo Electronico" style="-fx-background-color: #a9a9a9 , white , white; -fx-background-insets: 0 -1 -1 -1, 0 0 0 0, 0 -1 3 -1;" />
+            <PasswordField fx:id="campoRegPass" layoutX="28.0" layoutY="159.0" prefHeight="25.0" prefWidth="212.0" promptText="Contraseña" style="-fx-background-insets: 0 -1 -1 -1, 0 0 0 0, 0 -1 3 -1; -fx-background-color: #a9a9a9 , white , white;" />
+            <PasswordField fx:id="campoRegPass2" layoutX="28.0" layoutY="191.0" prefHeight="25.0" prefWidth="212.0" promptText="Confirmar contraseña" style="-fx-background-color: #a9a9a9 , white , white; -fx-background-insets: 0 -1 -1 -1, 0 0 0 0, 0 -1 3 -1;" />
+            <Button fx:id="btnRegisterUser" layoutX="64.0" layoutY="230.0" mnemonicParsing="false" onAction="#registerUserClicked" prefHeight="44.0" prefWidth="114.0" style="-fx-background-color: #42a5f5; -fx-background-radius: 10000;" text="Registrarse" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="11.0" />
                </font>
             </Button>
-            <Button fx:id="btnExit" layoutX="535.0" layoutY="361.0" mnemonicParsing="false" onAction="#exitClicked" prefHeight="19.0" prefWidth="49.0" style="-fx-font-family: Helvetica; -fx-background-color: #d32f2f;" text="Salir" textAlignment="CENTER" textFill="WHITE">
+            <Button fx:id="btnVolver" layoutX="577.0" layoutY="14.0" mnemonicParsing="false" onAction="#volverClicked" prefHeight="19.0" prefWidth="49.0" style="-fx-font-family: Helvetica; -fx-background-color: #d32f2f;" text="Salir" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Button>
-            <Label layoutX="397.0" layoutY="27.0" style="-fx-background-color: #b0bec5; -fx-border-style: dashed; -fx-border-color: #90a4ae;" text="Registro de usuario" textAlignment="CENTER">
+            <Label layoutX="17.0" prefHeight="84.0" prefWidth="322.0" text="Ingrese las credenciales con las que quiere registrarse" textFill="#a19e9e" wrapText="true">
                <font>
-                  <Font name="System Bold" size="12.0" />
+                  <Font name="SansSerif Regular" size="24.0" />
                </font>
             </Label>
          </children>
