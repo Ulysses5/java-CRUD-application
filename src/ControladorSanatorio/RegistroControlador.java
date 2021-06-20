@@ -37,11 +37,11 @@ public class RegistroControlador implements Initializable {
     @FXML
     private Button btnRegisterUser;
     @FXML
-    private Button btnExit;
-    @FXML
     private TextField campoRegMail;
     @FXML
     private PasswordField campoRegPass2;
+    @FXML
+    private Button btnVolver;
 
     /**
      * Initializes the controller class.
@@ -82,8 +82,9 @@ public class RegistroControlador implements Initializable {
         }
 
     @FXML
-    private void exitClicked(ActionEvent event) {
-        System.exit(0);
+    private void volverClicked(ActionEvent event) {
+                System.exit(0);
+
     }
     
 }

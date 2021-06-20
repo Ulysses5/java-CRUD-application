@@ -19,7 +19,19 @@ public class ModeloPersona {
     private String idObraSoc;
     private String Sexo;
     private String busqueda;
+    private String fechaNac;
     
+    public ModeloPersona(String nombre, String apellido, String dni, String telefono, String direccion, String obraSoc, String idObraSoc, String Sexo, String fechaNac) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.dni = dni;
+        this.telefono = telefono;
+        this.direccion = direccion;
+        this.obraSoc = obraSoc;
+        this.idObraSoc = idObraSoc;
+        this.Sexo = Sexo;
+        this.fechaNac = fechaNac;
+    }
     public ModeloPersona(String nombre, String apellido, String dni, String telefono, String direccion, String obraSoc, String idObraSoc, String Sexo) {
         this.nombre = nombre;
         this.apellido = apellido;
@@ -40,7 +52,7 @@ public class ModeloPersona {
         try{
             ConectorMariaDB con = new ConectorMariaDB();
             for (int i = 0; i < 3; i++) {
-                valores.add(i,busqueda);
+                valores.add(i,busqueda+"%");
             }
             if ("".equals(busqueda)) {
                 con.ejecutarConsulta("SELECT * FROM `persons-tbl`;");
@@ -48,7 +60,7 @@ public class ModeloPersona {
             else{
             con.ejecutarConsultaPreparada(("SELECT *"
                     + " FROM `persons-tbl`"
-                    + " WHERE DNI = ?"
+                    + " WHERE DNI LIKE ?"
                     + " OR Nombre LIKE ?"
                     + " OR Apellido LIKE ?"
                     +";"),valores);
@@ -80,8 +92,48 @@ public class ModeloPersona {
                 }
         return obs;
         }
-
-
+    public int addPersona(){
+        ArrayList<String> valores = new ArrayList<String>();
+        try{
+            valores.add("Paciente");
+            valores.add(this.dni);
+            valores.add(this.nombre);
+            valores.add(this.apellido);
+            valores.add(this.fechaNac);
+            if (this.Sexo.equals("Femenino")) {
+                valores.add("1");
+            }
+            else{
+                valores.add("0");
+            }
+            valores.add(this.telefono);
+            valores.add(this.direccion);
+            valores.add(this.obraSoc);
+            valores.add(this.idObraSoc);
+            ConectorMariaDB con = new ConectorMariaDB();
+            System.out.println(valores);
+            con.ejecutarConsultaPreparada(("INSERT INTO"
+                    + " `persons-tbl`"
+                    + " (`Clasificacion`, `DNI`, `Nombre`, `Apellido`,"
+                    + " `Fecha de Nacimiento`, `ID Sexo`, `Telefono`,"
+                    + " `Direccion`, `ID Obra Social`, `Num. Obra Social`)"
+                    + " VALUES"
+                    + " (?,?,?,"
+                    + "?,?,?,"
+                    + "?,?,"
+                    + "(SELECT `ID Obra Social` FROM `Obra Social` WHERE `Nombre`=?),?);"),valores);
+            ResultSet rs = con.getResultSet();
+            while(rs.next()){
+                System.out.println(rs.next());
+                return(0);
+            }
+            con.cerrarConexion();
+        }
+        catch(SQLException ex){
+                System.out.println(ex);
+                }
+        return 1;
+    }
 
     public String getNombre() {
         return nombre;

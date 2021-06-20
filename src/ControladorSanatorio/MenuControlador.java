@@ -1,10 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package ControladorSanatorio;
 
+import ModeloSanatorio.ModeloUsuario;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -15,9 +11,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
-import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 /**
@@ -28,7 +23,7 @@ import javafx.stage.Stage;
 public class MenuControlador implements Initializable {
 
     @FXML
-    private Button btnLogout;
+    private Hyperlink btnLogout;
     @FXML
     private Button btnBusqueda;
     @FXML
@@ -36,12 +31,12 @@ public class MenuControlador implements Initializable {
     @FXML
     private Button btnAñadir;
 
-    /**
-     * Initializes the controller class.
-     */
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        ModeloUsuario user = new ModeloUsuario();
+        System.out.println(user.getUsername());
+        usuarioText.setText(user.getUsername());
     }    
 
     @FXML
@@ -57,7 +52,6 @@ public class MenuControlador implements Initializable {
         Parent root = FXMLLoader.load(getClass().getResource("/VistaSanatorio/BusquedaVista.fxml"));
         Stage window = (Stage) btnLogout.getScene().getWindow();
         window.centerOnScreen();
-        window.setX(window.getX()-100);
         window.setScene(new Scene(root));
     }
 

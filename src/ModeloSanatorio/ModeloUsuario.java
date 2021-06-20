@@ -22,6 +22,12 @@ public class ModeloUsuario {
         this.username = username;
         this.password = password;
     }
+
+
+    public ModeloUsuario() {
+        this.username = username;
+    }
+
     
     public int loginUser() throws SQLException{
         ConectorMariaDB con = new ConectorMariaDB();
@@ -31,6 +37,7 @@ public class ModeloUsuario {
         con.ejecutarConsultaPreparada("SELECT * FROM `loginInfo` WHERE `username` = ? AND `password` = SHA2(?,256)", valores);
         ResultSet rs = con.getResultSet();
         if(rs.next()){
+            
             return(0);
         }
         else{

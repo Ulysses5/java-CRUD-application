@@ -4,16 +4,10 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/D:/Java/Projectos/Sanatorio/src/ControladorSanatorio/LoginControlador.java</file>
-            <file>file:/D:/Java/Projectos/Sanatorio/src/ControladorSanatorio/BusquedaControlador.java</file>
-            <file>file:/D:/Java/Projectos/Sanatorio/src/VistaSanatorio/RegistroVista.fxml</file>
             <file>file:/D:/Java/Projectos/Sanatorio/src/Conector/ConectorMariaDB.java</file>
-            <file>file:/D:/Java/Projectos/Sanatorio/src/ControladorSanatorio/Main.java</file>
-            <file>file:/D:/Java/Projectos/Sanatorio/src/ControladorSanatorio/AnadirController.java</file>
-            <file>file:/D:/Java/Projectos/Sanatorio/src/ModeloSanatorio/ModeloPersona.java</file>
+            <file>file:/D:/Java/Projectos/Sanatorio/src/VistaSanatorio/LoginVista.fxml</file>
             <file>file:/D:/Java/Projectos/Sanatorio/src/ControladorSanatorio/MenuControlador.java</file>
-            <file>file:/D:/Java/Projectos/Sanatorio/src/ControladorSanatorio/RegistroControlador.java</file>
             <file>file:/D:/Java/Projectos/Sanatorio/src/ModeloSanatorio/ModeloUsuario.java</file>
-            <file>file:/D:/Java/Projectos/Sanatorio/src/ControladorSanatorio/EdicionController.java</file>
         </group>
     </open-files>
 </project-private>
