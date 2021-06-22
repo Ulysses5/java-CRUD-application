@@ -19,13 +19,13 @@
                   <Image url="@../assets/back.jpg" />
                </image>
             </ImageView>
-            <TextField fx:id="campoUser" layoutX="46.0" layoutY="137.0" prefHeight="25.0" prefWidth="187.0" promptText="Usuario" style="-fx-background-color: #a9a9a9 , white , white; -fx-background-insets: 0 -1 -1 -1, 0 0 0 0, 0 -1 3 -1;" />
-            <PasswordField fx:id="campoPass" layoutX="43.0" layoutY="177.0" prefHeight="25.0" prefWidth="193.0" promptText="Contraseña" style="-fx-background-color: #a9a9a9 , white , white; -fx-background-insets: 0 -1 -1 -1, 0 0 0 0, 0 -1 3 -1;" styleClass="boton" />
-            <Button fx:id="btnLogin" layoutX="83.0" layoutY="218.0" mnemonicParsing="false" onAction="#loginClicked" prefHeight="44.0" prefWidth="114.0" style="-fx-font-family: Helvetica; -fx-background-color: #42a5f5; -fx-background-radius: 100000;" text="Iniciar Sesión" textAlignment="CENTER" textFill="WHITE">
+            <TextField fx:id="campoUser" focusTraversable="false" layoutX="46.0" layoutY="137.0" prefHeight="25.0" prefWidth="187.0" promptText="Usuario" style="-fx-background-color: #a9a9a9 , white , white; -fx-background-insets: 0 -1 -1 -1, 0 0 0 0, 0 -1 3 -1;" />
+            <PasswordField fx:id="campoPass" focusTraversable="false" layoutX="43.0" layoutY="177.0" prefHeight="25.0" prefWidth="193.0" promptText="Contraseña" style="-fx-background-color: #a9a9a9 , white , white; -fx-background-insets: 0 -1 -1 -1, 0 0 0 0, 0 -1 3 -1;" styleClass="boton" />
+            <Button fx:id="btnLogin" focusTraversable="false" layoutX="83.0" layoutY="218.0" mnemonicParsing="false" onAction="#loginClicked" prefHeight="44.0" prefWidth="114.0" style="-fx-font-family: Helvetica; -fx-background-color: #42a5f5; -fx-background-radius: 100000;" text="Iniciar Sesión" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font name="SansSerif Bold" size="11.0" />
                </font></Button>
-            <Button fx:id="btnExit" layoutX="737.0" layoutY="14.0" mnemonicParsing="false" onAction="#exitClicked" prefHeight="19.0" prefWidth="49.0" style="-fx-font-family: Helvetica; -fx-background-color: #d32f2f;" text="Salir" textAlignment="CENTER" textFill="WHITE">
+            <Button fx:id="btnExit" focusTraversable="false" layoutX="577.0" layoutY="15.0" mnemonicParsing="false" onAction="#exitClicked" prefHeight="19.0" prefWidth="49.0" style="-fx-font-family: Helvetica; -fx-background-color: #d32f2f;" text="Salir" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
@@ -40,7 +40,7 @@
                   <Font name="SansSerif Regular" size="12.0" />
                </font>
             </Label>
-            <Hyperlink fx:id="btnRegister" layoutX="163.0" layoutY="268.0" onAction="#registerClicked" text="Registrarse">
+            <Hyperlink fx:id="btnRegister" focusTraversable="false" layoutX="163.0" layoutY="268.0" onAction="#registerClicked" text="Registrarse">
                <font>
                   <Font name="SansSerif Regular" size="12.0" />
                </font>

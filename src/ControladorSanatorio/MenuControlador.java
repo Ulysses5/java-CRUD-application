@@ -34,9 +34,8 @@ public class MenuControlador implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        ModeloUsuario user = new ModeloUsuario();
-        System.out.println(user.getUsername());
-        usuarioText.setText(user.getUsername());
+        
+
     }    
 
     @FXML
@@ -63,5 +62,4 @@ public class MenuControlador implements Initializable {
         window.centerOnScreen();
         window.setScene(new Scene(root));
     }
-    
 }

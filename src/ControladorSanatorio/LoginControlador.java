@@ -42,7 +42,6 @@ public class LoginControlador implements Initializable {
         ModeloUsuario user = new ModeloUsuario(campoUser.getText(), campoPass.getText());
         int loginCode = user.loginUser();
         if (0 == loginCode){
-            user.setUsername(campoUser.getText());
             Parent root = FXMLLoader.load(getClass().getResource("/VistaSanatorio/MenuVista.fxml"));
             Stage window = (Stage) btnLogin.getScene().getWindow();
             window.setScene(new Scene(root));

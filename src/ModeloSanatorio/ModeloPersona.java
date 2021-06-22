@@ -3,6 +3,7 @@ package ModeloSanatorio;
 import Conector.ConectorMariaDB;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -55,14 +56,17 @@ public class ModeloPersona {
                 valores.add(i,busqueda+"%");
             }
             if ("".equals(busqueda)) {
-                con.ejecutarConsulta("SELECT * FROM `persons-tbl`;");
+                con.ejecutarConsulta("SELECT `persons-tbl`.`Nombre`,`DNI`,`Apellido`,`Telefono`,`Direccion`,`Num. Obra Social`,`Obra Social`.`Nombre` as \"Obra Social\",`ID Sexo`"
+                        + " FROM `persons-tbl`,`Obra Social`"
+                        + " WHERE `persons-tbl`.`ID Obra Social`=`Obra Social`.`ID Obra Social`;");
             }
             else{
-            con.ejecutarConsultaPreparada(("SELECT *"
-                    + " FROM `persons-tbl`"
-                    + " WHERE DNI LIKE ?"
-                    + " OR Nombre LIKE ?"
-                    + " OR Apellido LIKE ?"
+            con.ejecutarConsultaPreparada(("SELECT `persons-tbl`.`Nombre`,`DNI`,`Apellido`,`Telefono`,`Direccion`,`Num. Obra Social`,`Obra Social`.`Nombre` as \"Obra Social\",`ID Sexo`"
+                    + " FROM `persons-tbl`,`Obra Social`"
+                    + " WHERE (DNI LIKE ?"
+                    + " OR `persons-tbl`.`Nombre` LIKE ?"
+                    + " OR Apellido LIKE ?)"
+                    + " AND `persons-tbl`.`ID Obra Social`=`Obra Social`.`ID Obra Social`"
                     +";"),valores);
             }
             ResultSet rs = con.getResultSet();
@@ -73,7 +77,7 @@ public class ModeloPersona {
                 String telefono = rs.getString("Telefono");
                 String direccion = rs.getString("Direccion");
                 String idos = rs.getString("Num. Obra Social");
-                String obraSocial = rs.getString("ID Obra Social");
+                String obraSocial = rs.getString("Obra Social");
                 String sexo = "No definido";
                 if ("0".equals(rs.getString("ID Sexo"))) {
                     sexo = "Hombre";
@@ -134,7 +138,110 @@ public class ModeloPersona {
                 }
         return 1;
     }
-
+    public int updatePaciente(){
+        ArrayList<String> valores = new ArrayList<String>();
+        try{
+            valores.add(this.nombre);
+            valores.add(this.apellido);
+            valores.add(this.fechaNac);
+            if (this.Sexo.equals("Femenino")) {
+                valores.add("1");
+            }
+            else{
+                valores.add("0");
+            }
+            valores.add(this.telefono);
+            valores.add(this.direccion);
+            valores.add(this.obraSoc);
+            valores.add(this.idObraSoc);
+            valores.add(this.dni);
+            ConectorMariaDB con = new ConectorMariaDB();
+            System.out.println(valores);
+            con.ejecutarConsultaPreparada(("UPDATE `persons-tbl` "
+                    + "SET `Nombre`=?,`Apellido`=?,`Fecha de Nacimiento`=?,`ID Sexo`=?,`Telefono`=?,`Direccion`=?,"
+                    + "`ID Obra Social`=(SELECT `ID Obra Social` "
+                    + "FROM `Obra Social` "
+                    + "WHERE `Nombre`=?),`Num. Obra Social`=? "
+                    + "WHERE `DNI`=?;"),valores);
+            ResultSet rs = con.getResultSet();
+            while(rs.next()){
+                System.out.println(rs.next());
+                return(0);
+            }
+            con.cerrarConexion();
+        }
+        catch(SQLException ex){
+                System.out.println(ex);
+                }
+        return 1;
+    }
+    public ArrayList<String> getDatosPaciente(String DNI){
+        ArrayList<String> busqueda = new ArrayList<String>();
+        ArrayList<String> valores = new ArrayList<String>();
+        
+        busqueda.add(DNI);
+        try{
+            ConectorMariaDB con = new ConectorMariaDB();
+            con.ejecutarConsultaPreparada(("SELECT `persons-tbl`.`Nombre`,`Apellido`,`Telefono`,`Direccion`,`Num. Obra Social`,`Obra Social`.`Nombre` as \"Obra Social\",`Fecha de Nacimiento`,`ID Sexo`"
+                    + " FROM `persons-tbl`,`Obra Social`"
+                    + " WHERE DNI = ?"
+                    + " AND `persons-tbl`.`ID Obra Social`=`Obra Social`.`ID Obra Social`"
+                    +";"),busqueda);
+            ResultSet rs = con.getResultSet();
+            while(rs.next()){
+                String nombre = rs.getString("Nombre");
+                String apellido = rs.getString("Apellido");
+                String telefono = rs.getString("Telefono");
+                String direccion = rs.getString("Direccion");
+                String idos = rs.getString("Num. Obra Social");
+                String obraSocial = rs.getString("Obra Social");
+                String sexo = "No definido";
+                String fechaNac = rs.getString("Fecha de Nacimiento");
+                if ("0".equals(rs.getString("ID Sexo"))) {
+                    sexo = "Hombre";
+                }
+                else if ("1".equals(rs.getString("ID Sexo"))) {
+                    sexo = "Mujer";
+                }
+                valores.add(nombre);
+                valores.add(apellido);
+                valores.add(direccion);
+                valores.add(telefono);
+                valores.add(idos);
+                valores.add(obraSocial);
+                valores.add(sexo);
+                valores.add(fechaNac);
+                
+            }
+            con.cerrarConexion();
+        }
+        catch(SQLException ex){
+                System.out.println(ex);
+                }
+        return valores;
+        }
+    
+    public int deletePaciente(){
+        ArrayList<String> delete = new ArrayList<String>();
+        try{
+            delete.add(this.dni);
+            ConectorMariaDB con = new ConectorMariaDB();
+            System.out.println(delete);
+            con.ejecutarConsultaPreparada(("DELETE FROM `persons-tbl` WHERE `DNI`=?;"),delete);
+            ResultSet rs = con.getResultSet();
+            while(rs.next()){
+                System.out.println(rs.next());
+                return(0);
+            }
+            con.cerrarConexion();
+        }
+        catch(SQLException ex){
+                System.out.println(ex);
+                }
+        return 1;
+    }
+    
+    
     public String getNombre() {
         return nombre;
     }
